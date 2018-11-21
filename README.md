@@ -25,8 +25,7 @@ RandomAccess接口实际上什么都没有定义。所以RandomAccess接口只�
 在binarySearch（）方法中它要判断传入的List是否RamdomAccess的实例，如果是indexedBinarySearch（）方法，如果不是，那么调用
 iteratorBinarySearch()方法
 ```java
-  public static <T>
-  int binarySearch(List<? extends Comparable<? super T>> list,T key){
+  public static <T> int binarySearch(List<? extends Comparable<? super T>> list,T key){
     if(list instanceof RandomAccess || list.size()<BINARYSEARCH_THRESHOLD)
       return Collections.indexedBinarySearch(list,key);
     else
